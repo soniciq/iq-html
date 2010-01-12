@@ -1,0 +1,37 @@
+= IQ::HTML
+
+A simple gem containing a series of helper methods for creating html markup including the escaping of strings. The aim was to create the simplest possible gem for creating HTML snippets for when the alternatives are overkill.
+
+===Tag examples:
+  IQ::HTML.tag('br')                                      #=> "<br />"
+  IQ::HTML.tag('strong', 'Bill & Ben')                    #=> "<strong>Bill &amp; Ben</strong>"
+  IQ::HTML.tag('strong', 'Bill & Ben', false)             #=> "<strong>Bill & Ben</strong>"
+  IQ::HTML.tag('strong', 'B&B', { :id => 'bb' }, false)   #=> "<strong id="bb">Bill & Ben</strong>"
+  IQ::HTML.tag('input', :title => 'B&B')                  #=> '<input type="text" title="B&amp;B" />'
+  IQ::HTML.tag('strong', 'B&B', :title => 'Bill & Ben')   #=> "<strong title="Bill &amp; Ben">B&amp;B</strong>"
+
+===Escaping strings:
+  IQ::HTML.escape('Letters, Num83r5, & -- &amp; > -- &gt; < -- &lt; " -- &quot; &#1234;')
+  #=> 'Letters, Num83r5, &amp; -- &amp;amp; &gt; -- &amp;gt; &lt; -- &amp;lt; &quot; -- &amp;quot; &amp;#1234;'
+  
+  IQ::HTML.escape_once('Letters, Num83r5, & -- &amp; > -- &gt; < -- &lt; " -- &quot; &#1234;')
+  #=> 'Letters, Num83r5, &amp; -- &amp; &gt; -- &gt; &lt; -- &lt; &quot; -- &quot; &#1234;'
+
+===Sanitising a string for use in an HTML "id" attribute:
+  IQ::HTML.sanitize_as_dom_id('product[variants][0][stock]')
+  #=> 'product-variants-0-stock'
+
+
+== Note on Patches/Pull Requests
+ 
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+== Copyright
+
+Copyright (c) 2010 Jamie Hill, SonicIQ Ltd. See LICENSE for details.
