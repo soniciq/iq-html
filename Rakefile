@@ -8,8 +8,8 @@ begin
     gem.summary = %Q{Library for creating snippets of html.}
     gem.description = %Q{Library containing a series of helper methods for creating html markup including the escaping of strings.}
     gem.email = "jamie@soniciq.com"
-    gem.homepage = "http://soniciq.com/projects/iq-html"
-    gem.authors = ["jamie"]
+    gem.homepage = "http://github.com/iq/iq-html"
+    gem.authors = ["Jamie Hill"]
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
     gem.add_development_dependency "yard", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
