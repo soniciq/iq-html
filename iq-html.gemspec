@@ -23,12 +23,13 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "iq-html.gemspec",
      "lib/iq-html.rb",
      "lib/iq/html.rb",
      "test/helper.rb",
      "test/iq/html_test.rb"
   ]
-  s.homepage = %q{http://github.com/iq/iq-html}
+  s.homepage = %q{http://github.com/soniciq/iq-html}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}

@@ -28,7 +28,7 @@ A simple gem containing a series of helper methods for creating html markup incl
 
 == Documentation
 
-Documentation is handled with YARD[http://github.com/lsegal/yard]. You can view the docs at http://rdoc.info/projects/soniciq/iq-html/blob/622f72960486bce056871ad5028534baef5ec731 or alternatively, if you have the yard gem installed, run:
+Documentation is handled with YARD[http://github.com/lsegal/yard]. You can view the docs at http://rdoc.info/projects/soniciq/iq-html or alternatively, if you have the yard gem installed, run:
 
   rake yard
 
