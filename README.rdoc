@@ -2,6 +2,11 @@
 
 A simple gem containing a series of helper methods for creating html markup including the escaping of strings. The aim was to create the simplest possible gem for creating HTML snippets for when the alternatives are overkill.
 
+==Install
+  gem install iq-html
+  
+==Usage
+
 ===Tag examples:
   IQ::HTML.tag('br')                                      #=> "<br />"
   IQ::HTML.tag('strong', 'Bill & Ben')                    #=> "<strong>Bill &amp; Ben</strong>"
@@ -21,6 +26,8 @@ A simple gem containing a series of helper methods for creating html markup incl
   IQ::HTML.sanitize_as_dom_id('product[variants][0][stock]')
   #=> 'product-variants-0-stock'
 
+== Documentation
+  http://yardoc.org/docs/soniciq-iq-html/file:README.rdoc
 
 == Note on Patches/Pull Requests
  
