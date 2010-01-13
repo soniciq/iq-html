@@ -27,7 +27,14 @@ A simple gem containing a series of helper methods for creating html markup incl
   #=> 'product-variants-0-stock'
 
 == Documentation
-  http://yardoc.org/docs/soniciq-iq-html/file:README.rdoc
+
+Documentation is handled with YARD[http://github.com/lsegal/yard]. You can view it over at:
+
+http://rdoc.info/projects/soniciq/iq-html/blob/622f72960486bce056871ad5028534baef5ec731
+
+...alternatively if you have the yard gem installed, run:
+
+  rake yard
 
 == Note on Patches/Pull Requests
  
