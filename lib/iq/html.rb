@@ -40,7 +40,6 @@ module IQ
     # @return [String] the escaped string (leaving existing entities intact)
     def self.sanitize_as_dom_id(string_to_sanitize)
       raise ArgumentError, 'Argument must be a string' unless string_to_sanitize.is_a?(String)
-
       # see http://www.w3.org/TR/html4/types.html#type-name
       string_to_sanitize.to_s.gsub(']','').gsub(/[^-a-zA-Z0-9:.]/, "-")
     end
@@ -57,17 +56,24 @@ module IQ
     #   IQ::HTML.tag('strong', 'B&B', { :id => 'bb' }, false)   #=> "<strong id="bb">Bill & Ben</strong>"
     #   IQ::HTML.tag('input', :title => 'B&B')                  #=> '<input type="text" title="B&amp;B" />'
     #   IQ::HTML.tag('strong', 'B&B', :title => 'Bill & Ben')   #=> "<strong title="Bill &amp; Ben">B&amp;B</strong>"
-    #   
-    # @param [String, Symbol] name
-    # @param [String] content
-    # @param [Hash] attributes
-    # @param [true, false] escape
+    # 
+    # @overload self.tag(name, attributes = {})
+    #   @param [String, Symbol] name
+    #   @param [Hash] attributes
+    # @overload self.tag(name, content, escape = true)
+    #   @param [String, Symbol] name
+    #   @param [String] content
+    #   @param [true, false] escape
+    # @overload self.tag(name, content, attributes, escape = true)
+    #   @param [String, Symbol] name
+    #   @param [String] content
+    #   @param [Hash] attributes
+    #   @param [true, false] escape
     #
     # @return [String]
     def self.tag(name, *args)
       raise ArgumentError, 'Name must be a symbol or string' unless name.is_a?(Symbol) || name.is_a?(String)
 
-      raise ArgumentError, 'Too many arguments' if args.size > 3
       case args.size
         when 3 then content, attributes, escape = *args
         when 2
@@ -84,6 +90,9 @@ module IQ
             else
               raise ArgumentError, 'Second argument must be a content string or an attributes hash'
           end
+        when 0
+        else
+          raise ArgumentError, "Too many arguments"
       end
       
       raise ArgumentError, 'Content must be in the form of a string' unless content.nil? || content.is_a?(String)
