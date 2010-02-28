@@ -86,7 +86,7 @@ module IQ
         when 1
           case args.last
             when String then escape, content = true, *args
-            when Hash then attributes = *args
+            when Hash then attributes = args.last
             else
               raise ArgumentError, 'Second argument must be a content string or an attributes hash'
           end
