@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{iq-html}
-  s.version = "0.1.2"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jamie Hill"]
-  s.date = %q{2010-02-28}
+  s.date = %q{2010-05-30}
   s.description = %q{Library containing a series of helper methods for creating html markup including the escaping of strings.}
   s.email = %q{jamie@soniciq.com}
   s.extra_rdoc_files = [
@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/soniciq/iq-html}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Library for creating snippets of html.}
   s.test_files = [
     "test/helper.rb",
